@@ -22,7 +22,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:src="@drawable/crit" />
+                android:src="@drawable/bless" />
 
             <Button
                 android:id="@+id/blessDown"
@@ -37,6 +37,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/plus" />
+
+            <TextView
+                android:id="@+id/blessCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Zero"
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -45,26 +53,34 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/missIcon"
+                android:id="@+id/curseIcon"
                 android:layout_width="106dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
-                android:src="@drawable/miss" />
+                android:src="@drawable/curse" />
 
             <Button
-                android:id="@+id/missUp"
+                android:id="@+id/curseDown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/minus" />
 
             <Button
-                android:id="@+id/missDown"
+                android:id="@+id/curseUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/plus" />
+
+            <TextView
+                android:id="@+id/curseCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Zero"
+                android:textSize="24sp" />
 
         </LinearLayout>
     </LinearLayout>

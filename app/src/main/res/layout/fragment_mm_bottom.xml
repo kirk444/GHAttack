@@ -15,8 +15,25 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+
+                <TextView
+                    android:id="@+id/CardsInDeck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/deckNumText"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/CardNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Zero"
+                    android:textSize="24sp" />
+
             <Space
-                android:layout_width="273dp"
+                android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_weight="1" />
 
