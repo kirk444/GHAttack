@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MM_bottom extends Fragment {
     private Button mStart;
@@ -44,5 +45,9 @@ public class MM_bottom extends Fragment {
                 mCallback.startGame();
             }
         });
+    }
+    public void updateCardNum(int inNum){
+        TextView cardNum = getView().findViewById(R.id.CardNumber);
+        cardNum.setText(Integer.toString(inNum));
     }
 }

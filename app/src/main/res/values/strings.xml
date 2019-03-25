@@ -14,4 +14,25 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="shuffle">Shuffle</string>
     <string name="draw">Draw</string>
+    <string name="SelectClass">Select Your Class:</string>
+    <string-array name="class_select">
+        <item>Custom</item>
+        <item>Brute</item>
+        <item>Tinker</item>
+        <item>Spellweaver</item>
+        <item>Scoundrel</item>
+        <item>Cragheart</item>
+        <item>Mindthief</item>
+        <item>Spikey Eye</item>
+        <item>Lightning Bolts</item>
+        <item>Spears</item>
+        <item>Circles</item>
+        <item>Eclipse</item>
+        <item>Cthulu</item>
+        <item>Music</item>
+        <item>Angry Face</item>
+        <item>Saw</item>
+        <item>Reverse Triforce</item>
+        <item>Angry Bird</item>
+    </string-array>
 </resources>

@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ public class MM_top extends Fragment {
     }
     public interface OnHeadlineSelectedListener{
         void reset();
+        void classChange(String outClass);
     }
     @Override
     public void onAttach(Context context){ //Sets up the interface
@@ -47,10 +50,17 @@ public class MM_top extends Fragment {
         });
         Button mSave = v.findViewById(R.id.SaveButt);
         Button mLoad = v.findViewById(R.id.LoadBut);
+        final Spinner mClassSelect = v.findViewById(R.id.ClassSelect);
+        mClassSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                mCallback.classChange(mClassSelect.getSelectedItem().toString());
+            }
 
-    }
-    public void updateCardNum(int inNum){
-        TextView cardNum = getView().findViewById(R.id.CardNumber);
-        cardNum.setText(Integer.toString(inNum));
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 }

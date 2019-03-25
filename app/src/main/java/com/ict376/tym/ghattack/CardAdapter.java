@@ -25,6 +25,9 @@ public class CardAdapter extends BaseAdapter {
     public int getCount(){return counter.size();}
     public Object getItem(int arg0){return null;}
     public long getItemId(int position){return position;}
+    public void setIcons(int[] inIncon){
+        icon = inIncon;
+    }
     public int getCardCount(){
         int cardCount = 0;
         for(int i = 0; i < counter.size(); i++){
@@ -41,7 +44,12 @@ public class CardAdapter extends BaseAdapter {
         final TextView counterNum = row.findViewById(R.id.listText);
         counterNum.setText(Integer.toString(counter.get(position)));
         ImageView cardIcon = row.findViewById(R.id.listIcon);
-        cardIcon.setImageResource((icon[position]));
+        if(position >= icon.length){
+            cardIcon.setImageResource(R.drawable.back);
+        }else{
+            cardIcon.setImageResource((icon[position]));
+        }
+
         Button mPlus = row.findViewById(R.id.plusBut);
         mPlus.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){

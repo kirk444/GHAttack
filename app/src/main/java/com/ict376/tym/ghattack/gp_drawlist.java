@@ -44,6 +44,7 @@ public class gp_drawlist extends ListFragment {
         deckList.add(R.drawable.back);
         GPCardAdapter adapter = new GPCardAdapter(getView().getContext(), deckList);
         mdrawList.setAdapter(adapter);
+        changeColor(R.color.colorPrimaryDark);
     }
     public void addCard(int inCard){
         deckList.add(0, inCard);
