@@ -1,6 +1,7 @@
 package com.ict376.tym.ghattack;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,31 +41,40 @@ public class CardAdapter extends BaseAdapter {
         final int pos = position;
         LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row;
-        row = inflater.inflate(R.layout.row_cardnum, parent, false);
-        final TextView counterNum = row.findViewById(R.id.listText);
-        counterNum.setText(Integer.toString(counter.get(position)));
-        ImageView cardIcon = row.findViewById(R.id.listIcon);
-        if(position >= icon.length){
-            cardIcon.setImageResource(R.drawable.back);
-        }else{
-            cardIcon.setImageResource((icon[position]));
-        }
 
-        Button mPlus = row.findViewById(R.id.plusBut);
-        mPlus.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                counter.set(pos, counter.get(pos)+1);
-                counterNum.setText(Integer.toString(counter.get(pos)));
+        if(icon[position] != R.drawable.skip){
+            row = inflater.inflate(R.layout.row_cardnum, parent, false);
+            final TextView counterNum = row.findViewById(R.id.listText);
+            counterNum.setText(Integer.toString(counter.get(position)));
+            ImageView cardIcon = row.findViewById(R.id.listIcon);
+            if(position >= icon.length){
+                cardIcon.setImageResource(R.drawable.back);
+            }else{
+                cardIcon.setImageResource((icon[position]));
             }
-        });
-        Button mMinus = row.findViewById(R.id.minusBut);
-        mMinus.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                counter.set(pos, counter.get(pos)-1);
-                counterNum.setText(Integer.toString(counter.get(pos)));
-            }
-        });
+
+            Button mPlus = row.findViewById(R.id.plusBut);
+            mPlus.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    counter.set(pos, counter.get(pos)+1);
+                    counterNum.setText(Integer.toString(counter.get(pos)));
+                }
+            });
+            Button mMinus = row.findViewById(R.id.minusBut);
+            mMinus.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    counter.set(pos, counter.get(pos)-1);
+                    counterNum.setText(Integer.toString(counter.get(pos)));
+                }
+            });
+
+        }else{
+            row = inflater.inflate(R.layout.row_blank, parent, false);
+            Log.d("Skip", "Skipped");
+
+        }
         return row;
+
     }
 
 }

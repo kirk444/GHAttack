@@ -13,8 +13,8 @@
         <FrameLayout
             android:id="@+id/topFrag_container"
             android:layout_width="match_parent"
-            android:layout_height="151dp"
-            android:layout_weight="3"
+            android:layout_height="170dp"
+            android:layout_weight="0"
             android:background="?android:attr/detailsElementBackground">
 
         </FrameLayout>
@@ -22,7 +22,7 @@
         <FrameLayout
             android:id="@+id/ListFrag_container"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="match_parent"
             android:layout_weight="3"
             android:background="?android:attr/detailsElementBackground"
             tools:layout_editor_absoluteY="118dp">
@@ -32,8 +32,8 @@
         <FrameLayout
             android:id="@+id/bottomFrag_container"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_weight="3"
+            android:layout_height="50dp"
+            android:layout_weight="0"
             android:background="?android:attr/detailsElementBackground"
             tools:layout_editor_absoluteY="618dp">
 

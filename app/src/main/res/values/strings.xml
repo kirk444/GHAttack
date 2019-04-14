@@ -9,7 +9,7 @@
     <string name="minus">-</string>
     <string name="plus">+</string>
     <string name="currCards">0</string>
-
+    <string name="cardsLeftText">Cards Left:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="shuffle">Shuffle</string>
@@ -18,21 +18,95 @@
     <string-array name="class_select">
         <item>Custom</item>
         <item>Brute</item>
-        <item>Tinker</item>
+        <item>Tinkerer</item>
         <item>Spellweaver</item>
         <item>Scoundrel</item>
         <item>Cragheart</item>
         <item>Mindthief</item>
-        <item>Spikey Eye</item>
-        <item>Lightning Bolts</item>
-        <item>Spears</item>
+        <item>Sun</item>
+        <item>Lightning Bolt</item>
+        <item>Three Spears</item>
         <item>Circles</item>
         <item>Eclipse</item>
         <item>Cthulu</item>
-        <item>Music</item>
+        <item>Music Note</item>
         <item>Angry Face</item>
         <item>Saw</item>
-        <item>Reverse Triforce</item>
-        <item>Angry Bird</item>
+        <item>Triforce</item>
+        <item>Two Minis</item>
+    </string-array>
+    <string-array name="battle_goals">
+        <item>Battle Goals</item>
+        <item>**Aggressor</item>
+        <item>*Diehard</item>
+        <item>*Dynamo</item>
+        <item>*Executioner</item>
+        <item>*Explorer</item>
+        <item>*Fast Healer</item>
+        <item>*Hoarder</item>
+        <item>*Hunter</item>
+        <item>**Indigent</item>
+        <item>**Layabout</item>
+        <item>*Masochist</item>
+        <item>*Neutralizer</item>
+        <item>*Opener</item>
+        <item>*Pacifist</item>
+        <item>*Plunderer</item>
+        <item>*Professional</item>
+        <item>*Protector</item>
+        <item>**Purist</item>
+        <item>*Sadist</item>
+        <item>*Scrambler</item>
+        <item>*Straggler</item>
+        <item>*Streamliner</item>
+        <item>*Workhorse</item>
+        <item>*Zealot</item>
+    </string-array>
+    <string-array name="goal_status">
+        <item>Goal Status</item>
+        <item>Incomplete</item>
+        <item>Complete</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+    </string-array>
+    <string-array name="numbers">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
     </string-array>
 </resources>

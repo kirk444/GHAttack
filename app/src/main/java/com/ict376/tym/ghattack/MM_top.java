@@ -23,6 +23,8 @@ public class MM_top extends Fragment {
     }
     public interface OnHeadlineSelectedListener{
         void reset();
+        void save();
+        void load();
         void classChange(String outClass);
     }
     @Override
@@ -49,7 +51,17 @@ public class MM_top extends Fragment {
             }
         });
         Button mSave = v.findViewById(R.id.SaveButt);
+        mSave.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                mCallback.save();
+            }
+        });
         Button mLoad = v.findViewById(R.id.LoadBut);
+        mLoad.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                mCallback.load();
+            }
+        });
         final Spinner mClassSelect = v.findViewById(R.id.ClassSelect);
         mClassSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

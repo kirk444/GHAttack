@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.List;
 public class gp_drawlist extends ListFragment {
     private ListView mdrawList;
     private List<Integer> deckList = new ArrayList();
+    private ImageView background;
 
     public gp_drawlist() {
         // Required empty public constructor
@@ -44,15 +46,17 @@ public class gp_drawlist extends ListFragment {
         deckList.add(R.drawable.back);
         GPCardAdapter adapter = new GPCardAdapter(getView().getContext(), deckList);
         mdrawList.setAdapter(adapter);
-        changeColor(R.color.colorPrimaryDark);
+        background = v.findViewById(R.id.GameplayBackGround);
+        changeColor(R.color.colorPrimaryDark, R.drawable.lightback);
     }
     public void addCard(int inCard){
         deckList.add(0, inCard);
         GPCardAdapter adapter = new GPCardAdapter(getView().getContext(), deckList);
         mdrawList.setAdapter(adapter);
     }
-    public void changeColor(int inColor){
-        getView().setBackgroundColor(inColor);
+    public void changeColor(int inColor, int inBack){
+        getView().setBackgroundResource(inColor);
+        background.setImageResource(inBack);
     }
 
 }

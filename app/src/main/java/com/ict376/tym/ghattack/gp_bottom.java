@@ -8,10 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class gp_bottom extends Fragment {
     gp_bottom.OnHeadlineSelectedListener mCallback;
+    TextView cardCount;
 
     public gp_bottom() {
         // Required empty public constructor
@@ -60,5 +62,10 @@ public class gp_bottom extends Fragment {
                 mCallback.shuffleDeck();
             }
         });
+        cardCount =v.findViewById(R.id.cardsLeft);
+    }
+    public void updateCards(int stackCount){
+        cardCount =getView().findViewById(R.id.cardsLeft);
+        cardCount.setText(Integer.toString(stackCount));
     }
 }

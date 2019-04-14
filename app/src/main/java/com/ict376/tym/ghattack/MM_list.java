@@ -99,7 +99,7 @@ public class MM_list extends ListFragment {
         adapter = new CardAdapter(getView().getContext(), cardsNum, cards);
         adapter.notifyDataSetChanged();
         mCardList.setAdapter(adapter);
-
+        adapter.notifyDataSetChanged();
     }
     public void updateList(){
         ArrayList <Integer> cardsNum = new ArrayList<Integer>();
@@ -122,60 +122,7 @@ public class MM_list extends ListFragment {
         });
     }
     public void updateClass(String inClass){
-        switch(inClass){
-            case "Brute":
-                cards[7] = R.drawable.br_pos3;
-                cards[8] = R.drawable.br_addpush;
-                cards[9] = R.drawable.br_addpierce;
-                cards[10] = R.drawable.br_addstun;
-                cards[11] = R.drawable.br_adddisarm;
-                cards[12] = R.drawable.br_addmuddle;
-                cards[13] = R.drawable.br_addtarg;
-                cards[14] = R.drawable.br_pos1shield;
-                cards[15] = R.drawable.carda;
-                cards[16] = R.drawable.cardb;
-                updateList();
-                break;
-            case "Spellweaver":
-                cards[7] = R.drawable.sw_stun;
-                cards[8] = R.drawable.sw_pos1wound;
-                cards[9] = R.drawable.sw_pos1imm;
-                cards[10] = R.drawable.sw_pos1curse;
-                cards[11] = R.drawable.sw_pos2fire;
-                cards[12] = R.drawable.sw_pos2ice;
-                cards[13] = R.drawable.sw_addnature;
-                cards[14] = R.drawable.sw_addwind;
-                cards[15] = R.drawable.sw_addsun;
-                cards[16] = R.drawable.sw_adddark;
-                updateList();
-                break;
-            case "Scoundrel":
-                cards[7] = R.drawable.sc_addpos1;
-                cards[8] = R.drawable.sc_addpierce;
-                cards[9] = R.drawable.sc_addposion;
-                cards[10] = R.drawable.sc_addmuddle;
-                cards[11] = R.drawable.sc_addinvis;
-                cards[12] = R.drawable.carda;
-                cards[13] = R.drawable.cardb;
-                cards[14] = R.drawable.cardc;
-                cards[15] = R.drawable.cardd;
-                cards[16] = R.drawable.carde;
-                updateList();
-                break;
-            case "Spears":
-                cards[7] = R.drawable.sp_addpos1;
-                cards[8] = R.drawable.sp_addmuddle;
-                cards[9] = R.drawable.sp_addpierce;
-                cards[10] = R.drawable.sp_addstun;
-                cards[11] = R.drawable.sp_addtarg;
-                cards[12] = R.drawable.sp_refresh;
-                cards[13] = R.drawable.carda;
-                cards[14] = R.drawable.cardb;
-                cards[15] = R.drawable.cardc;
-                cards[16] = R.drawable.cardd;
-                updateList();
-                break;
-
-        }
+        cards = DeckMaker.updateDeck(cards, inClass);
+        updateList();
     }
 }
