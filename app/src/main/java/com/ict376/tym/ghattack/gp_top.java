@@ -19,6 +19,7 @@ import android.widget.Toast;
  */
 public class gp_top extends Fragment {
     gp_top.OnHeadlineSelectedListener mCallback;
+    Toast toast;
 
 
     public gp_top() {
@@ -142,10 +143,18 @@ public class gp_top extends Fragment {
         final TextView mBlessCount = v.findViewById(R.id.blessCount);
         mCurseUp.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                mCallback.addCurse();
                 int curses = Integer.parseInt(mCurseCount.getText().toString());
-                curses += 1;
-                mCurseCount.setText(Integer.toString(curses));
+                if(curses < 10){
+                    mCallback.addCurse();
+                    curses += 1;
+                    mCurseCount.setText(Integer.toString(curses));
+                }else{
+                    if(toast !=null){
+                        toast.cancel();
+                    }
+                    toast = Toast.makeText(getActivity(), "Maximum 10 Curses in Deck", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
         mCurseDown.setOnClickListener(new View.OnClickListener(){
@@ -160,10 +169,18 @@ public class gp_top extends Fragment {
         });
         mBlessUp.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                mCallback.addBless();
                 int blesses = Integer.parseInt(mBlessCount.getText().toString());
-                blesses += 1;
-                mBlessCount.setText(Integer.toString(blesses));
+                if(blesses < 10){
+                    mCallback.addBless();
+                    blesses += 1;
+                    mBlessCount.setText(Integer.toString(blesses));
+                }else{
+                    if(toast !=null){
+                        toast.cancel();
+                    }
+                    toast = Toast.makeText(getActivity(), "Maximum 10 Blessings in Deck", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
         mBlessDown.setOnClickListener(new View.OnClickListener(){

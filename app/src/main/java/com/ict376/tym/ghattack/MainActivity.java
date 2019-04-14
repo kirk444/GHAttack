@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements MM_bottom.OnHeadl
     public void classChange(String inClass){
         mm_list.updateClass(inClass);
         selected = inClass;
+        if(!load()){
+            mm_list.updateList(defaultDeck);
+        }
     }
     public void save(){
         ArrayList<Integer> convertThis = mm_list.getCards();
@@ -63,14 +66,16 @@ public class MainActivity extends AppCompatActivity implements MM_bottom.OnHeadl
             toast.show();
         }
     }
-    public void load(){
+    public boolean load(){
         DeckDBProvider deckDB = new DeckDBProvider(this);
         if(deckDB.checkDeck(selected)){
             int[] loadedDeck = deckDB.getCards(selected);
             mm_list.updateList(loadedDeck);
+            return true;
         }else{
             Toast toast = Toast.makeText(this, "No saved data", Toast.LENGTH_LONG);
             toast.show();
+            return false;
         }
 
     }

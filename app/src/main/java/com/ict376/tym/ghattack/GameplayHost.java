@@ -21,8 +21,7 @@ public class GameplayHost extends Activity implements gp_bottom.OnHeadlineSelect
     MediaPlayer shufflePlayer;
     MediaPlayer dealPlayer;
     ArrayList<Integer> stdCards;
-    Stack deck = new Stack();
-    boolean shuffle = false;
+    Stack <GHCard>deck = new Stack<GHCard>();
     String selectedClass;
 
     @Override
@@ -78,7 +77,7 @@ public class GameplayHost extends Activity implements gp_bottom.OnHeadlineSelect
     }
     public void addCurse(){
         GHCard curse = new GHCard(R.drawable.curse, false, false);
-        deck.push(curse);
+        deck.push((GHCard)curse);
         Collections.shuffle(deck);
         stdCards.set(19, stdCards.get(19)+1);
         gp_bot.updateCards(deck.size());
@@ -89,11 +88,11 @@ public class GameplayHost extends Activity implements gp_bottom.OnHeadlineSelect
         if(stdCards.get(19) != 0) {
             do {
                 GHCard checkThis = (GHCard) deck.pop();
-                if (checkThis.getName() == R.drawable.curse && found == false) {
+                if (checkThis.getName() == R.drawable.curse && !found) {
                     found = true;
                     stdCards.set(19, stdCards.get(19) - 1);
                 } else {
-                    tempDeck.push(checkThis);
+                    tempDeck.push((GHCard)checkThis);
                 }
             } while (!deck.isEmpty());
             deck = tempDeck;
@@ -103,7 +102,7 @@ public class GameplayHost extends Activity implements gp_bottom.OnHeadlineSelect
     }
     public void addBless(){
         GHCard bless = new GHCard(R.drawable.bless, false, false);
-        deck.push(bless);
+        deck.push((GHCard)bless);
         Collections.shuffle(deck);
         stdCards.set(18, stdCards.get(18)+1);
         gp_bot.updateCards(deck.size());

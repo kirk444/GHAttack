@@ -24,7 +24,7 @@ public class MM_top extends Fragment {
     public interface OnHeadlineSelectedListener{
         void reset();
         void save();
-        void load();
+        boolean load();
         void classChange(String outClass);
     }
     @Override
