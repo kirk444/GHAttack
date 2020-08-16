@@ -453,6 +453,30 @@ public class DeckMaker {
                 tempcard = new GHCard(R.drawable.skip, false, false);
                 classDeck.add(tempcard);
                 break;
+            case "JotL Red Guard":
+                tempcard = new GHCard(R.drawable.pos2fire, false, false);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.pos2light, false, true);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.pos1firelight, false, true);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.pos1shield1, false, true);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.pos1immobilize, false, true);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.pos1wound, false, true);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.skip, false, true);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.skip, false, false);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.skip, false, false);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.skip, false, false);
+                classDeck.add(tempcard);
+                tempcard = new GHCard(R.drawable.skip, false, false);
+                classDeck.add(tempcard);
+                break;
             default:
                 tempcard = new GHCard(R.drawable.carda, false, false);
                 classDeck.add(tempcard);
